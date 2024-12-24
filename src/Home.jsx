@@ -94,14 +94,23 @@ export default function Home() {
   };
 
   // Style to modify labels
+  // const styl = `
+  //   :where(.css-dev-only-do-not-override-77tu7h).ant-form-vertical .ant-form-item:not(.ant-form-item-horizontal) .ant-form-item-label >label, 
+  //   :where(.css-dev-only-do-not-override-77tu7h).ant-form-vertical .ant-form-item:not(.ant-form-item-horizontal) .ant-col-24.ant-form-item-label >label, 
+  //   :where(.css-dev-only-do-not-override-77tu7h).ant-form-vertical .ant-form-item:not(.ant-form-item-horizontal) .ant-col-xl-24.ant-form-item-label >label {
+  //     margin: 0;
+  //     color: white;
+  //   }
+  // `;
+
   const styl = `
-    :where(.css-dev-only-do-not-override-77tu7h).ant-form-vertical .ant-form-item:not(.ant-form-item-horizontal) .ant-form-item-label >label, 
-    :where(.css-dev-only-do-not-override-77tu7h).ant-form-vertical .ant-form-item:not(.ant-form-item-horizontal) .ant-col-24.ant-form-item-label >label, 
-    :where(.css-dev-only-do-not-override-77tu7h).ant-form-vertical .ant-form-item:not(.ant-form-item-horizontal) .ant-col-xl-24.ant-form-item-label >label {
-      margin: 0;
-      color: white;
-    }
-  `;
+  .ant-form-vertical .ant-form-item:not(.ant-form-item-horizontal) .ant-form-item-label >label, 
+  .ant-form-vertical .ant-form-item:not(.ant-form-item-horizontal) .ant-col-24.ant-form-item-label >label, 
+  .ant-form-vertical .ant-form-item:not(.ant-form-item-horizontal) .ant-col-xl-24.ant-form-item-label >label {
+    margin: 0;
+    color: white;
+  }
+`;
 
   return (
     <>
