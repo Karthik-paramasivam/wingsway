@@ -228,7 +228,7 @@ export default function Home() {
                           required: true,
                           message: "Please input your phone number!",
                         },
-                        { validator: validatePhoneNumber },
+                        // { validator: validatePhoneNumber },
                       ]}
                     >
                       <Input.Group compact>
@@ -285,7 +285,7 @@ export default function Home() {
               <div className="row">
                 <motion.div
                   ref={ref} // Ref to observe intersection
-                  className="col-6"
+                  className="col-12 col-lg-6"
                   initial={{ opacity: 0, x: -50 }}
                   animate={{
                     opacity: hasViewed ? 1 : 0,
@@ -408,7 +408,7 @@ export default function Home() {
                     </motion.ul>
                   </div>
                 </motion.div>
-                <div className="col-6 ">
+                <div className="col-12 col-lg-6 ">
                   
                     <img
                       src={Crew}
@@ -437,7 +437,7 @@ export default function Home() {
               </p>
             </div>
             <div className="col-12 d-flex justify-content-between flex-wrap">
-              <div className="col-4 col-lg-3 card border border-light shadow-lg hover-scale2">
+              <div className="col-12 col-lg-3 card border border-light shadow-lg hover-scale2 mt-2 mt-lg-0">
                 <img
                   src={icon1}
                   alt="icon image1"
@@ -449,7 +449,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="col-4 col-lg-3 card border border-light shadow-lg hover-scale2">
+              <div className="col-12 col-lg-3 card border border-light shadow-lg hover-scale2 mt-2 mt-lg-0">
                 <img
                   src={icon2}
                   alt="icon image2"
@@ -461,7 +461,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="col-4 col-lg-3 card border border-light shadow-lg hover-scale2">
+              <div className="col-12 col-lg-3 card border border-light shadow-lg hover-scale2 mt-2 mt-lg-0">
                 <img
                   src={icon3}
                   alt="icon image3"

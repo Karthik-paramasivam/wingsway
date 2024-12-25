@@ -81,6 +81,25 @@
 
 @media (max-width: 768px) {
   .dynamic-height {
-    height: 900px !important;
+    height: 1000px !important;
   }
+}
+
+.responsive-logo {
+  width: 13%; /* Default width */
+}
+
+@media (max-width: 991.98px) { /* Small and medium devices */
+  .responsive-logo {
+    width: 30% !important; /* Override to 100% */
+  }
+} 
+
+.Contactbutton {
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+button.Contactbutton:hover {
+  background-color: white !important;
+  color: #007dc0 !important;
 }
