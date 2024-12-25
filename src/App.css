@@ -103,3 +103,21 @@ button.Contactbutton:hover {
   background-color: white !important;
   color: #007dc0 !important;
 }
+
+.Submitbutton {
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+button.Submitbutton:hover {
+  transform: scale(1.05); /* Slight enlargement on hover */
+
+}
+.fixed-icon {
+  position: fixed;
+  bottom: 20px;  /* Adjust this value to position the icon vertically */
+  right: 20px;   /* Adjust this value to position the icon horizontally */
+  z-index: 1000; /* Ensure the icon stays on top of other content */
+  
+  color: #25D366;
+
+}
