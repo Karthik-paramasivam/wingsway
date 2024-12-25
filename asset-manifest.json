@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/wingsway/static/css/main.bd58ebc3.css",
-    "main.js": "/wingsway/static/js/main.367f622c.js",
+    "main.css": "/wingsway/static/css/main.cf16825f.css",
+    "main.js": "/wingsway/static/js/main.5853856d.js",
     "static/js/488.c4785fdb.chunk.js": "/wingsway/static/js/488.c4785fdb.chunk.js",
     "static/media/crew2.jpg": "/wingsway/static/media/crew2.d470bf06b889ac16493d.jpg",
     "static/media/Backgroundimage1.jpg": "/wingsway/static/media/Backgroundimage1.85101192fd4c6fe0608c.jpg",
     "static/media/crew.jpg": "/wingsway/static/media/crew.5832621448c8ab9362b6.jpg",
+    "static/media/crew3.jpg": "/wingsway/static/media/crew3.e59157dc05fb13813f03.jpg",
     "static/media/Logo2.png": "/wingsway/static/media/Logo2.731dfe8fe8f8ba5e024e.png",
     "static/media/icon2.png": "/wingsway/static/media/icon2.c9726ff30b20f03bcfb7.png",
     "static/media/icon3.png": "/wingsway/static/media/icon3.f21ea8df9a364d9a5630.png",
     "static/media/icon1.png": "/wingsway/static/media/icon1.eaab6652017f02ab4378.png",
     "static/media/WingsWay logo.png": "/wingsway/static/media/WingsWay logo.2d38dac4d59df4056f8d.png",
     "index.html": "/wingsway/index.html",
-    "main.bd58ebc3.css.map": "/wingsway/static/css/main.bd58ebc3.css.map",
-    "main.367f622c.js.map": "/wingsway/static/js/main.367f622c.js.map",
+    "main.cf16825f.css.map": "/wingsway/static/css/main.cf16825f.css.map",
+    "main.5853856d.js.map": "/wingsway/static/js/main.5853856d.js.map",
     "488.c4785fdb.chunk.js.map": "/wingsway/static/js/488.c4785fdb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bd58ebc3.css",
-    "static/js/main.367f622c.js"
+    "static/css/main.cf16825f.css",
+    "static/js/main.5853856d.js"
   ]
 }
