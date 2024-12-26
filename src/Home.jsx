@@ -358,7 +358,7 @@ export default function Home() {
                 {/* Second Column with Animation */}
                 <motion.div
                   className="col-12 col-lg-4 rounded-4 mt-3 m-auto mt-lg-1"
-                  style={{ backgroundColor: "#0721a4" }}
+                  style={{ backgroundColor: "#0721a4", padding:"20px"}}
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 2 }}
@@ -1297,18 +1297,18 @@ export default function Home() {
             style={{ backgroundColor: "#002994", color: "white" }}
           >
             <div
-              className="row d-flex justify-content-center align-items-center mt-5"
+              className="row d-flex justify-content-center align-items-center mt-5 "
               style={{ backgroundColor: "#002994", color: "white" }}
             >
-              <div className="col-12 col-md-12 col-lg-2 d-flex flex-column align-items-center ms-lg-5">
+              <div className="col-12 col-md-12 col-lg-2 d-flex flex-column align-items-center text-start ">
                 <img
                   src={Footerlogo}
                   alt="logo"
-                  className="img-fluid mt-3 responsive-logofooter"
+                  className="img-fluid mt-3 responsive-logofooter  text-start"
                 />
               </div>
 
-              <div className="col-12 col-md-12 col-lg-1 text-center  mt-lg-4 text-lg-start">
+              <div className="col-12 col-md-12 col-lg-1 text-center mt-lg-4 ms-lg-4 text-lg-start">
                 <a href="#about" className="footer-link">
                   <span>
                     About The <br /> Course
