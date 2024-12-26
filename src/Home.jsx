@@ -10,7 +10,6 @@ import {
   faCheck,
   faCircleCheck,
   faPlaneUp,
-  
 } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
@@ -20,6 +19,8 @@ import icon2 from "./Images/icon2.png";
 import icon3 from "./Images/icon3.png";
 import Crew2 from "./Images/crew2.jpg";
 import Crew3 from "./Images/crew3.jpg";
+import Crew4 from "./Images/crew4.jpg";
+import Crew5 from "./Images/crew5.jpeg";
 
 export default function Home() {
   const [form] = Form.useForm(); // useForm hook for handling form operations
@@ -38,6 +39,9 @@ export default function Home() {
   const [hasViewedSlide, setHasViewedSlide] = useState({
     myElement: false,
     secondElement: false,
+    thirdElement: false,
+    fourthElement: false,
+    fifthElement: false,
   });
 
   const { ref: myRef1, inView: myElementIsVisible } = useInView({
@@ -54,6 +58,33 @@ export default function Home() {
     onChange: (inView) => {
       if (inView && !hasViewedSlide.secondElement) {
         setHasViewedSlide((prev) => ({ ...prev, secondElement: true }));
+      }
+    },
+  });
+
+  const { ref: myRef3, inView: thirdElementIsVisible } = useInView({
+    triggerOnce: true,
+    onChange: (inView) => {
+      if (inView && !hasViewedSlide.thirdElement) {
+        setHasViewedSlide((prev) => ({ ...prev, thirdElement: true }));
+      }
+    },
+  });
+
+  const { ref: myRef4, inView: fourthElementIsVisible } = useInView({
+    triggerOnce: true,
+    onChange: (inView) => {
+      if (inView && !hasViewedSlide.fourthElement) {
+        setHasViewedSlide((prev) => ({ ...prev, fourthElement: true }));
+      }
+    },
+  });
+
+  const { ref: myRef5, inView: fifthElementIsVisible } = useInView({
+    triggerOnce: true,
+    onChange: (inView) => {
+      if (inView && !hasViewedSlide.fifthElement) {
+        setHasViewedSlide((prev) => ({ ...prev, fifthElement: true }));
       }
     },
   });
@@ -320,7 +351,7 @@ export default function Home() {
               <div className="row">
                 <motion.div
                   ref={ref} // Ref to observe intersection
-                  className="col-12 col-lg-6"
+                  className="col-12 col-lg-6 "
                   initial={{ opacity: 0, x: -50 }}
                   animate={{
                     opacity: hasViewed ? 1 : 0,
@@ -501,18 +532,21 @@ export default function Home() {
         </div>
 
         <div className="container mt-5">
-          <div className="row ">
+          <div    className={`row shadow rounded-4 slide-in-left  ${
+              hasViewedSlide.secondElement ? "animate-slide-in" : ""
+            }`}
+            ref={myRef2}>
             {/* First Column - Image */}
-            <div className="col-12 col-lg-6 hover-scale2">
+            <div className="col-12 col-lg-6 hover-scale2 text-start mt-3 mb-3">
               <img
                 src={Crew2}
-                alt="CrewImage2"
+                alt="Course Image"
                 className="img-fluid rounded-3"
               />
             </div>
 
             {/* Second Column - Course Content */}
-            <div className="col-12 col-lg-6 ">
+            <div className="col-12 col-lg-6  mt-3 mt-lg-0">
               <p className="text-center">
                 <span className="fw-bold fs-3 ">Course </span>
                 <span className="fw-bold fs-3 text-primary">Content</span>
@@ -601,7 +635,7 @@ export default function Home() {
               </ul>
               <div className="text-center">
                 <Button
-                  className="mt-2 text-center text-white Contactbutton"
+                  className="mt-2 text-center text-white Contactbutton mb-2 mb-lg-0"
                   style={{ background: "#0d278e" }}
                   onClick={() => {
                     window.location.href = "#"; // Simulate href="#" behavior
@@ -616,12 +650,13 @@ export default function Home() {
 
         <div className="container mt-5">
           {/* <div className="row "> */}
-          <div   className={`row  slide-in-left  ${
-              hasViewedSlide.secondElement ? "animate-slide-in" : ""
+          <div
+            className={`row shadow rounded-4 slide-in-left  ${
+              hasViewedSlide.thirdElement ? "animate-slide-in" : ""
             }`}
-            ref={myRef2}>
-       
-            <div className="col-12 col-lg-6 shadow-lg rounded-3">
+            ref={myRef3}
+          >
+            <div className="col-12 col-lg-6  mt-3 mt-lg-0">
               <p className="text-center">
                 <span className="fw-bold fs-3 ">Learner’s </span>
                 <span className="fw-bold fs-3 text-primary">Profile</span>
@@ -713,7 +748,7 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="col-12 col-lg-6 hover-scale2 mt-3 mt-lg-0">
+            <div className="col-12 col-lg-6 hover-scale2 mt-3 mb-3">
               <img
                 src={Crew3}
                 alt="Leaner Profile Image"
@@ -723,24 +758,188 @@ export default function Home() {
           </div>
         </div>
 
+        <div className="container mt-5">
+          <div  className={`row  slide-in-left  ${
+              hasViewedSlide.fourthElement ? "animate-slide-in" : ""
+            }`}
+            ref={myRef4}>
+            {/* First Column - Image */}
+            <div className="col-12 col-lg-6 hover-scale2">
+              <img
+                src={Crew4}
+                alt="Qualifications Image"
+                className="img-fluid rounded-3"
+              />
+            </div>
+
+            {/* Second Column - Course Content */}
+            <div className="col-12 col-lg-6 shadow rounded-3">
+              <p className="text-center">
+                <span className="fw-bold fs-3 ">Entry </span>
+                <span className="fw-bold fs-3 text-primary">Qualifications</span>
+              </p>
+              <ul style={{ listStyleType: "none", paddingLeft: 0 }}>
+                <li>
+                  {" "}
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    className="text-primary me-2"
+                  />
+                  This course is suitable for individuals with the following qualifications:
+                </li>
+                <li>
+                  {" "}
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    className="text-primary me-2"
+                  />
+                  Grade 10 / O-level / Class 10
+                </li>
+                <li>
+                  {" "}
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    className="text-primary me-2"
+                  />
+                  High school graduates
+                </li>
+                <li>
+                  {" "}
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    className="text-primary me-2"
+                  />
+                  Undergraduates
+                </li>
+                <li>
+                  {" "}
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    className="text-primary me-2"
+                  />
+                  Postgraduates
+                </li>
+                <li>
+                  {" "}
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    className="text-primary me-2"
+                  />
+                  Working professionals
+                </li>
+            
+              </ul>
+              <div className="text-center">
+                <Button
+                  className="mt-2 text-center text-white Contactbutton"
+                  style={{ background: "#0d278e" }}
+                  onClick={() => {
+                    window.location.href = "#"; // Simulate href="#" behavior
+                  }}
+                >
+                  Enquire Now
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="container mt-5 ">
+          {/* <div className="row "> */}
+          <div
+            className={`row shadow rounded-3 slide-in-left   ${
+              hasViewedSlide.fifthElement ? "animate-slide-in" : "" 
+            }`}
+            ref={myRef5}
+          >
+            <div className="col-12 col-lg-6 rounded-3 mt-lg-5">
+              <p className="text-center mt-lg-3">
+                <span className="fw-bold fs-3 ">Career  </span>
+                <span className="fw-bold fs-3 text-primary">Opportunities</span>
+              </p>
+              <ul style={{ listStyleType: "none", paddingLeft: 0 }} className="ms-lg-5">
+                <li className="ms-lg-5">
+                  {" "}
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    className="text-primary me-2 text-center ms-lg-5"
+                  />
+                  Cabin Crew Supervisor
+                </li>
+                <li className="ms-lg-5">
+                  {" "}
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    className="text-primary me-2 ms-lg-5"
+                  />
+                 Senior Air Cabin Crew{" "}
+                </li>
+                <li className="ms-lg-5">
+                  {" "}
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    className="text-primary me-2 ms-lg-5"
+                  />
+                 Airline Passenger Service Staff{" "}
+                </li>
+                <li className="ms-lg-5">
+                  {" "}
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    className="text-primary me-2 ms-lg-5"
+                  />
+                 Ground Staff{" "}
+                </li>
+                <li className="ms-lg-5">
+                  {" "}
+                  <FontAwesomeIcon
+                    icon={faCircleCheck}
+                    className="text-primary me-2 ms-lg-5"
+                  />
+                  Other roles in the Hospitality sector{" "}
+                </li>
+
+             
+              </ul>
+              <div className="text-center">
+                <Button
+                  className="mt-2 mb-2 text-center text-white Contactbutton"
+                  style={{ background: "#0d278e" }}
+                  onClick={() => {
+                    window.location.href = "#"; // Simulate href="#" behavior
+                  }}
+                >
+                  Enquire Now
+                </Button>
+              </div>
+            </div>
+            <div className="col-12 col-lg-6 hover-scale2 mt-3 mt-lg-0 text-center">
+              <img
+                src={Crew5}
+                alt="Career Image"
+                className="img-fluid rounded-3 "
+                style={{width:"60%"}}
+              />
+            </div>
+          </div>
+        </div>
+
         <div className="container-fluid">
-  <div className="row">
-    <div className="col-12">
-      <p className="text-end">
-        <a 
-          href="https://wa.me/+971509062236" 
-          className="fixed-icon" 
-          target="_blank"  // Opens in a new tab
-          rel="noopener noreferrer"  // Security best practice when using target="_blank"
-        >
-          <FontAwesomeIcon icon={faWhatsapp} bounce size="2x" />
-        </a>
-      </p>
-    </div>
-  </div>
-</div>
-
-
+          <div className="row">
+            <div className="col-12">
+              <p className="text-end">
+                <a
+                  href="https://wa.me/+971509062236"
+                  className="fixed-icon"
+                  target="_blank" // Opens in a new tab
+                  rel="noopener noreferrer" // Security best practice when using target="_blank"
+                >
+                  <FontAwesomeIcon icon={faWhatsapp} bounce size="2x" />
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
