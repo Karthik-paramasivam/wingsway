@@ -363,7 +363,9 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 2 }}
                 >
-                  <h1 className="text-white mt-2 text-center mt-md-3 mt-lg-2">Enquire Now</h1>
+                  <h1 className="text-white mt-2 text-center mt-md-3 mt-lg-2">
+                    Enquire Now
+                  </h1>
                   <Form form={form} layout="vertical" onFinish={handleSubmit}>
                     {/* First Name Field */}
                     <Form.Item
@@ -537,21 +539,26 @@ export default function Home() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: hasViewed ? 1 : 0 }}
                         transition={{ delay: 0.8, duration: 0.5 }}
+                        className="d-flex align-items-start "
                       >
                         <FontAwesomeIcon
                           icon={faCircleCheck}
-                          className="text-primary me-2"
+                          className="text-primary me-2 flex-shrink-0 mt-1"
                         />
-                        Theoretical knowledge in class with our expert trainers.
+                        <span>
+                          Theoretical knowledge in class with our expert
+                          trainers.
+                        </span>{" "}
                       </motion.li>
                       <motion.li
                         initial={{ opacity: 0 }}
                         animate={{ opacity: hasViewed ? 1 : 0 }}
                         transition={{ delay: 1.0, duration: 0.5 }}
+                        className="d-flex align-items-start mt-1"
                       >
                         <FontAwesomeIcon
                           icon={faCircleCheck}
-                          className="text-primary me-2"
+                          className="text-primary me-2 flex-shrink-0 mt-1"
                         />
                         Live drills that prepare you to stay calm during flight
                         emergencies.
@@ -560,10 +567,11 @@ export default function Home() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: hasViewed ? 1 : 0 }}
                         transition={{ delay: 1.2, duration: 0.5 }}
+                        className="d-flex align-items-start mt-1"
                       >
                         <FontAwesomeIcon
                           icon={faCircleCheck}
-                          className="text-primary me-2"
+                          className="text-primary me-2 flex-shrink-0 mt-1"
                         />
                         Grooming sessions to help you always look your best.
                       </motion.li>
@@ -572,10 +580,11 @@ export default function Home() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: hasViewed ? 1 : 0 }}
                         transition={{ delay: 1.4, duration: 0.5 }}
+                        className="d-flex align-items-start mt-1"
                       >
                         <FontAwesomeIcon
                           icon={faCircleCheck}
-                          className="text-primary me-2"
+                          className="text-primary me-2 flex-shrink-0 mt-1"
                         />
                         Aircraft visits to give you a glimpse into your future
                         life as an aviator.
@@ -584,10 +593,11 @@ export default function Home() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: hasViewed ? 1 : 0 }}
                         transition={{ delay: 1.6, duration: 0.5 }}
+                        className="d-flex align-items-start mt-1"
                       >
                         <FontAwesomeIcon
                           icon={faCircleCheck}
-                          className="text-primary me-2"
+                          className="text-primary me-2 flex-shrink-0 mt-1"
                         />
                         Guaranteed internship after course completion.
                       </motion.li>
@@ -629,7 +639,7 @@ export default function Home() {
                 />
                 <div>
                   <p className="fw-bold text-center mt-2">
-                    Coordination and communication among crew members.
+                    Coordination and communication <br />among crew members.
                   </p>
                 </div>
               </div>
@@ -641,7 +651,7 @@ export default function Home() {
                 />
                 <div>
                   <p className="fw-bold text-center mt-2">
-                    Customer service and handling passenger interactions.
+                    Customer service and handling <br /> passenger interactions.
                   </p>
                 </div>
               </div>
@@ -653,7 +663,7 @@ export default function Home() {
                 />
                 <div>
                   <p className="fw-bold text-center mt-2">
-                    Safety protocols and emergency procedures.
+                    Safety protocols and emergency <br /> procedures.
                   </p>
                 </div>
               </div>
@@ -692,7 +702,7 @@ export default function Home() {
                   />
                   Introduction to the airline industry
                 </li>
-                <li>
+                <li className="mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
@@ -700,31 +710,31 @@ export default function Home() {
                   />
                   Air transport and flight operations
                 </li>
-                <li>
+                <li className="d-flex align-items-start mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
-                    className="text-primary me-2"
+                    className="text-primary me-2 flex-shrink-0 mt-1"
                   />
                   Crew responsibilities and co-operation
                 </li>
-                <li>
+                <li className="d-flex align-items-start mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
-                    className="text-primary me-2"
+                    className="text-primary me-2 flex-shrink-0 mt-1"
                   />
                   Managing abnormal and emergency situations
                 </li>
-                <li>
+                <li className="d-flex align-items-start mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
-                    className="text-primary me-2"
+                    className="text-primary me-2 flex-shrink-0 mt-1"
                   />
                   Handling medical emergencies on-board
                 </li>
-                <li>
+                <li className="mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
@@ -732,7 +742,7 @@ export default function Home() {
                   />
                   Dangerous goods
                 </li>
-                <li>
+                <li className="mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
@@ -740,27 +750,27 @@ export default function Home() {
                   />
                   Aviation security
                 </li>
-                <li>
+                <li className="d-flex align-items-start mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
-                    className="text-primary me-2"
+                    className="text-primary me-2 flex-shrink-0 mt-1"
                   />
                   Customer service and interaction with passengers
                 </li>
-                <li>
+                <li className="d-flex align-items-start mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
-                    className="text-primary me-2"
+                    className="text-primary me-2  flex-shrink-0 mt-1"
                   />
                   Airline catering and on-board retail services
                 </li>
-                <li>
+                <li className="d-flex align-items-start mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
-                    className="text-primary me-2"
+                    className="text-primary me-2 flex-shrink-0 mt-1"
                   />
                   Cabin crew professional development
                 </li>
@@ -802,7 +812,7 @@ export default function Home() {
                   />
                   Aspiring cabin crew members
                 </li>
-                <li>
+                <li className="mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
@@ -810,7 +820,7 @@ export default function Home() {
                   />
                   Customer service professionals{" "}
                 </li>
-                <li>
+                <li className="mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
@@ -818,24 +828,24 @@ export default function Home() {
                   />
                   Hospitality industry professionals{" "}
                 </li>
-                <li>
+                <li className="d-flex align-items-start mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
-                    className="text-primary me-2"
+                    className="text-primary me-2 flex-shrink-0 mt-1"
                   />
                   Individuals in the Travel and Tourism industry{" "}
                 </li>
-                <li>
+                <li className="d-flex align-items-start mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
-                    className="text-primary me-2"
+                    className="text-primary me-2 flex-shrink-0 mt-1"
                   />
                   Medical assistants or Healthcare workers{" "}
                 </li>
 
-                <li>
+                <li className="mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
@@ -843,27 +853,27 @@ export default function Home() {
                   />
                   Aviation security
                 </li>
-                <li>
+                <li className="d-flex align-items-start mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
-                    className="text-primary me-2"
+                    className="text-primary me-2 flex-shrink-0 mt-1"
                   />
                   Customer service and interaction with passengers
                 </li>
-                <li>
+                <li className="d-flex align-items-start mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
-                    className="text-primary me-2"
+                    className="text-primary me-2 flex-shrink-0 mt-1"
                   />
                   Airline catering and on-board retail services
                 </li>
-                <li>
+                <li className="d-flex align-items-start mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
-                    className="text-primary me-2"
+                    className="text-primary me-2 flex-shrink-0 mt-1"
                   />
                   Cabin crew professional development
                 </li>
@@ -915,16 +925,16 @@ export default function Home() {
                 </span>
               </p>
               <ul style={{ listStyleType: "none", paddingLeft: 0 }}>
-                <li>
-                  {" "}
+              <li className="d-flex align-items-start mt-1">
+              {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
-                    className="text-primary me-2"
+                    className="text-primary me-2 flex-shrink-0 mt-1"
                   />
                   This course is suitable for individuals with the following
                   qualifications:
                 </li>
-                <li>
+                <li className="mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
@@ -932,7 +942,7 @@ export default function Home() {
                   />
                   Grade 10 / O-level / Class 10
                 </li>
-                <li>
+                <li className="mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
@@ -940,7 +950,7 @@ export default function Home() {
                   />
                   High school graduates
                 </li>
-                <li>
+                <li className="mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
@@ -948,7 +958,7 @@ export default function Home() {
                   />
                   Undergraduates
                 </li>
-                <li>
+                <li className="mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
@@ -956,7 +966,7 @@ export default function Home() {
                   />
                   Postgraduates
                 </li>
-                <li>
+                <li className="mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
@@ -1005,7 +1015,7 @@ export default function Home() {
                   />
                   Cabin Crew Supervisor
                 </li>
-                <li className="ms-lg-5">
+                <li className="ms-lg-5 mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
@@ -1013,7 +1023,7 @@ export default function Home() {
                   />
                   Senior Air Cabin Crew{" "}
                 </li>
-                <li className="ms-lg-5">
+                <li className="ms-lg-5 mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
@@ -1021,7 +1031,7 @@ export default function Home() {
                   />
                   Airline Passenger Service Staff{" "}
                 </li>
-                <li className="ms-lg-5">
+                <li className="ms-lg-5 mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
@@ -1029,11 +1039,11 @@ export default function Home() {
                   />
                   Ground Staff{" "}
                 </li>
-                <li className="ms-lg-5">
+                <li className="ms-lg-5 d-flex align-items-start mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
-                    className="text-primary me-2 ms-lg-5"
+                    className="text-primary me-2 ms-lg-5  flex-shrink-0 mt-1"
                   />
                   Other roles in the Hospitality sector{" "}
                 </li>
@@ -1298,7 +1308,7 @@ export default function Home() {
                 />
               </div>
 
-              <div className="col-12 col-md-12 col-lg-1 text-center  mt-lg-4 text-lg-justify">
+              <div className="col-12 col-md-12 col-lg-1 text-center  mt-lg-4 text-lg-start">
                 <a href="#about" className="footer-link">
                   <span>
                     About The <br /> Course
@@ -1306,7 +1316,7 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="col-12 col-md-12 col-lg-1 mt-3 mt-md-3 text-center mt-lg-4 text-lg-justify" >
+              <div className="col-12 col-md-12 col-lg-1 mt-3 mt-md-3 text-center mt-lg-4 text-lg-start">
                 <a href="#key" className="footer-link">
                   <span>
                     Key <br /> Topics
@@ -1314,7 +1324,7 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="col-12 col-md-12 col-lg-1 mt-3 mt-md-3 text-center mt-lg-4 text-lg-justify">
+              <div className="col-12 col-md-12 col-lg-1 mt-3 mt-md-3 text-center mt-lg-4 text-lg-start">
                 <a href="#course" className="footer-link">
                   <span>
                     Course <br /> Content
@@ -1322,7 +1332,7 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="col-12 col-md-12 col-lg-1 mt-3 mt-md-3 text-center mt-lg-4 text-lg-justify">
+              <div className="col-12 col-md-12 col-lg-1 mt-3 mt-md-3 text-center mt-lg-4 text-lg-start">
                 <a href="#learner" className="footer-link">
                   <span>
                     Learner's <br /> Profile
@@ -1330,7 +1340,7 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="col-12 col-md-12 col-lg-1 mt-3 mt-md-3 text-center mt-lg-4 text-lg-justify">
+              <div className="col-12 col-md-12 col-lg-1 mt-3 mt-md-3 text-center mt-lg-4 text-lg-start">
                 <a href="#entry" className="footer-link">
                   <span>
                     Entry <br /> Qualification
@@ -1338,7 +1348,7 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="col-12 col-md-12 col-lg-1 mt-3 mt-md-3 text-center mt-lg-4 text-lg-justify">
+              <div className="col-12 col-md-12 col-lg-1 mt-3 mt-md-3 text-center mt-lg-4 text-lg-start">
                 <a href="#career" className="footer-link">
                   <span>
                     Career <br /> Opportunities
@@ -1346,7 +1356,7 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="col-12 col-md-12 col-lg-1 mt-3 mt-md-3 text-center mt-lg-1 text-lg-justify">
+              <div className="col-12 col-md-12 col-lg-1 mt-3 mt-md-3 text-center mt-lg-1 text-lg-start">
                 <a href="#Testimonials" className="footer-link">
                   <span>Testimonial</span>
                 </a>
