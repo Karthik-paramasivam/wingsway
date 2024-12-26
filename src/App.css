@@ -81,7 +81,7 @@
 
 @media (max-width: 768px) {
   .dynamic-height {
-    height: 1000px !important;
+    height: 1100px !important;
   }
 }
 
@@ -120,4 +120,55 @@ button.Submitbutton:hover {
   
   color: #25D366;
 
+}
+
+/* Hover effect for the "About" link */
+.footer-link {
+  color: white; /* Default color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and scaling */
+}
+
+.footer-link:hover {
+  color: #F3BC44; /* Change color on hover */
+  text-decoration: underline; /* Underline the text on hover */
+  transform: scale(1.1); /* Scale up slightly */
+}
+
+
+/* Enables smooth scrolling globally */
+html {
+  scroll-behavior: smooth;
+}
+
+.responsive-logofooter {
+  width: 100%; /* Default width */
+}
+
+@media (max-width: 991.98px) { /* Small and medium devices */
+  .responsive-logofooter {
+    width: 40% !important; /* Override to 100% */
+  }
+} 
+
+@keyframes enquireAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);  /* Start from below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);     /* End at normal position */
+  }
+}
+
+.animate-enquire {
+  animation: enquireAnimation 2s ease-out forwards;  /* Apply the animation */
+}
+
+/* For your container, you can initialize with opacity 0 and translateY(50px) */
+.containeranimate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 2s, transform 2s; /* Optional for smoother transition */
 }

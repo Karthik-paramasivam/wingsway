@@ -6,6 +6,11 @@ import "./App.css";
 import Logo2 from "./Images/Logo2.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Crew from "./Images/crew.jpg";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import Footerlogo from "./Images/Footerlogo.png";
+
 import {
   faCheck,
   faCircleCheck,
@@ -42,6 +47,8 @@ export default function Home() {
     thirdElement: false,
     fourthElement: false,
     fifthElement: false,
+    sixthElement: false,
+    seventhElement: false,
   });
 
   const { ref: myRef1, inView: myElementIsVisible } = useInView({
@@ -85,6 +92,22 @@ export default function Home() {
     onChange: (inView) => {
       if (inView && !hasViewedSlide.fifthElement) {
         setHasViewedSlide((prev) => ({ ...prev, fifthElement: true }));
+      }
+    },
+  });
+  const { ref: myRef6, inView: sixthElement } = useInView({
+    triggerOnce: true,
+    onChange: (inView) => {
+      if (inView && !hasViewedSlide.sixthElement) {
+        setHasViewedSlide((prev) => ({ ...prev, sixthElement: true }));
+      }
+    },
+  });
+  const { ref: myRef7, inView: seventhElement } = useInView({
+    triggerOnce: true,
+    onChange: (inView) => {
+      if (inView && !hasViewedSlide.seventhElement) {
+        setHasViewedSlide((prev) => ({ ...prev, seventhElement: true }));
       }
     },
   });
@@ -173,8 +196,111 @@ export default function Home() {
     margin: 0;
     color: white;
   }
+    .slick-dots {
+    position: absolute;
+    bottom: -25px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+    .slick-prev, .slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 40%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: white;
+    border: none;
+    outline: none;
+    background: white;
+}
+    .slick-prev:before, .slick-next:before {
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    opacity: .75;
+    color: #1677ff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+    .slick-dots li button:before {
+    font-family: 'slick';
+    font-size: 15px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: '•';
+    text-align: center;
+    opacity: .25;
+    color: #0d278e;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+    .slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: #1677ff;
+}
 `;
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    autoplay: true,
+    cssEase: "linear",
+    autoplaySpeed: 4000,
+    // initialSlide: 0,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true,
+          speed: 300,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+          speed: 300,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          speed: 300,
+        },
+      },
+    ],
+  };
+  const aboutRef = useRef(null);
+  const handleScrollToAbout = (e) => {
+    e.preventDefault(); // Prevent default anchor behavior
+    if (aboutRef.current) {
+      aboutRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <>
       <style>{styl}</style>
@@ -223,17 +349,21 @@ export default function Home() {
                     Become a <br />
                     Professional Airline Cabin Crew Member!
                   </h1>
+                  <h2 className="text-white fw-light">
+                    Join our comprehensive course to launch your aviation
+                    career.
+                  </h2>
                 </motion.div>
 
                 {/* Second Column with Animation */}
                 <motion.div
-                  className="col-12 col-lg-4  rounded-4 mt-1 m-auto"
+                  className="col-12 col-lg-4 rounded-4 mt-3 m-auto mt-lg-1"
                   style={{ backgroundColor: "#0721a4" }}
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 2 }}
                 >
-                  <h1 className="text-white mt-2 text-center">Enquire Now</h1>
+                  <h1 className="text-white mt-2 text-center mt-md-3 mt-lg-2">Enquire Now</h1>
                   <Form form={form} layout="vertical" onFinish={handleSubmit}>
                     {/* First Name Field */}
                     <Form.Item
@@ -345,7 +475,7 @@ export default function Home() {
         </div>
 
         {/* Animated Content When In View */}
-        <div className="container mt-5">
+        <div className="container mt-5" id="about">
           <div className="row">
             <div className="col-12">
               <div className="row">
@@ -476,7 +606,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="container mt-5">
+        <div className="container mt-5" id="key">
           <div
             className={`row  slide-in-left  ${
               hasViewedSlide.myElement ? "animate-slide-in" : ""
@@ -485,13 +615,13 @@ export default function Home() {
           >
             {" "}
             <div className="col-12 ">
-              <p className="text-center">
+              <p className="text-center ">
                 <span className="fs-3 fw-bold">Key </span>
                 <span className="text-primary fs-3 fw-bold">Topics</span>
               </p>
             </div>
-            <div className="col-12 d-flex justify-content-between flex-wrap">
-              <div className="col-12 col-lg-3 card border border-light shadow-lg hover-scale2 mt-2 mt-lg-0">
+            <div className="col-12 d-flex justify-content-between flex-wrap ">
+              <div className="col-12 col-lg-3 card border border-light shadow-lg hover-scale2 mt-2 mt-lg-0 p-sm-1">
                 <img
                   src={icon1}
                   alt="icon image1"
@@ -503,7 +633,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="col-12 col-lg-3 card border border-light shadow-lg hover-scale2 mt-2 mt-lg-0">
+              <div className="col-12 col-lg-3 card border border-light shadow-lg hover-scale2 mt-2 mt-lg-0 p-sm-1">
                 <img
                   src={icon2}
                   alt="icon image2"
@@ -515,7 +645,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="col-12 col-lg-3 card border border-light shadow-lg hover-scale2 mt-2 mt-lg-0">
+              <div className="col-12 col-lg-3 card border border-light shadow-lg hover-scale2 mt-2 mt-lg-0 p-sm-1">
                 <img
                   src={icon3}
                   alt="icon image3"
@@ -531,11 +661,13 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="container mt-5">
-          <div    className={`row shadow rounded-4 slide-in-left  ${
-              hasViewedSlide.secondElement ? "animate-slide-in" : ""
+        <div className="container mt-5" id="course">
+          <div
+            className={`row shadow rounded-4 slide-in-left  ${
+              hasViewedSlide.secondElement ? "animate-enquire" : ""
             }`}
-            ref={myRef2}>
+            ref={myRef2}
+          >
             {/* First Column - Image */}
             <div className="col-12 col-lg-6 hover-scale2 text-start mt-3 mb-3">
               <img
@@ -648,7 +780,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="container mt-5">
+        <div className="container mt-5" id="learner">
           {/* <div className="row "> */}
           <div
             className={`row shadow rounded-4 slide-in-left  ${
@@ -656,7 +788,7 @@ export default function Home() {
             }`}
             ref={myRef3}
           >
-            <div className="col-12 col-lg-6  mt-3 mt-lg-0">
+            <div className="col-12 col-lg-6 mt-3 mt-lg-0">
               <p className="text-center">
                 <span className="fw-bold fs-3 ">Learner’s </span>
                 <span className="fw-bold fs-3 text-primary">Profile</span>
@@ -758,13 +890,15 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="container mt-5">
-          <div  className={`row  slide-in-left  ${
-              hasViewedSlide.fourthElement ? "animate-slide-in" : ""
+        <div className="container mt-5" id="entry">
+          <div
+            className={`row row shadow rounded-4 slide-in-left  ${
+              hasViewedSlide.fourthElement ? "animate-enquire" : ""
             }`}
-            ref={myRef4}>
+            ref={myRef4}
+          >
             {/* First Column - Image */}
-            <div className="col-12 col-lg-6 hover-scale2">
+            <div className="col-12 col-lg-6 hover-scale2 mt-3 mb-3">
               <img
                 src={Crew4}
                 alt="Qualifications Image"
@@ -773,10 +907,12 @@ export default function Home() {
             </div>
 
             {/* Second Column - Course Content */}
-            <div className="col-12 col-lg-6 shadow rounded-3">
+            <div className="col-12 col-lg-6 mt-2">
               <p className="text-center">
                 <span className="fw-bold fs-3 ">Entry </span>
-                <span className="fw-bold fs-3 text-primary">Qualifications</span>
+                <span className="fw-bold fs-3 text-primary">
+                  Qualifications
+                </span>
               </p>
               <ul style={{ listStyleType: "none", paddingLeft: 0 }}>
                 <li>
@@ -785,7 +921,8 @@ export default function Home() {
                     icon={faCircleCheck}
                     className="text-primary me-2"
                   />
-                  This course is suitable for individuals with the following qualifications:
+                  This course is suitable for individuals with the following
+                  qualifications:
                 </li>
                 <li>
                   {" "}
@@ -827,11 +964,10 @@ export default function Home() {
                   />
                   Working professionals
                 </li>
-            
               </ul>
               <div className="text-center">
                 <Button
-                  className="mt-2 text-center text-white Contactbutton"
+                  className="mt-2 text-center text-white Contactbutton mb-2"
                   style={{ background: "#0d278e" }}
                   onClick={() => {
                     window.location.href = "#"; // Simulate href="#" behavior
@@ -844,25 +980,28 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="container mt-5 ">
+        <div className="container mt-5 " id="career">
           {/* <div className="row "> */}
           <div
-            className={`row shadow rounded-3 slide-in-left   ${
-              hasViewedSlide.fifthElement ? "animate-slide-in" : "" 
+            className={`row shadow rounded-4 slide-in-left   ${
+              hasViewedSlide.fifthElement ? "animate-slide-in" : ""
             }`}
             ref={myRef5}
           >
             <div className="col-12 col-lg-6 rounded-3 mt-lg-5">
               <p className="text-center mt-lg-3">
-                <span className="fw-bold fs-3 ">Career  </span>
+                <span className="fw-bold fs-3 ">Career </span>
                 <span className="fw-bold fs-3 text-primary">Opportunities</span>
               </p>
-              <ul style={{ listStyleType: "none", paddingLeft: 0 }} className="ms-lg-5">
+              <ul
+                style={{ listStyleType: "none", paddingLeft: 0 }}
+                className="ms-lg-5"
+              >
                 <li className="ms-lg-5">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
-                    className="text-primary me-2 text-center ms-lg-5"
+                    className="text-primary me-2 ms-lg-5"
                   />
                   Cabin Crew Supervisor
                 </li>
@@ -872,7 +1011,7 @@ export default function Home() {
                     icon={faCircleCheck}
                     className="text-primary me-2 ms-lg-5"
                   />
-                 Senior Air Cabin Crew{" "}
+                  Senior Air Cabin Crew{" "}
                 </li>
                 <li className="ms-lg-5">
                   {" "}
@@ -880,7 +1019,7 @@ export default function Home() {
                     icon={faCircleCheck}
                     className="text-primary me-2 ms-lg-5"
                   />
-                 Airline Passenger Service Staff{" "}
+                  Airline Passenger Service Staff{" "}
                 </li>
                 <li className="ms-lg-5">
                   {" "}
@@ -888,7 +1027,7 @@ export default function Home() {
                     icon={faCircleCheck}
                     className="text-primary me-2 ms-lg-5"
                   />
-                 Ground Staff{" "}
+                  Ground Staff{" "}
                 </li>
                 <li className="ms-lg-5">
                   {" "}
@@ -898,8 +1037,6 @@ export default function Home() {
                   />
                   Other roles in the Hospitality sector{" "}
                 </li>
-
-             
               </ul>
               <div className="text-center">
                 <Button
@@ -913,18 +1050,154 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="col-12 col-lg-6 hover-scale2 mt-3 mt-lg-0 text-center">
+            <div className="col-12 col-lg-6 hover-scale2 mt-3 mb-3 text-center">
               <img
                 src={Crew5}
                 alt="Career Image"
                 className="img-fluid rounded-3 "
-                style={{width:"60%"}}
+                style={{ width: "60%" }}
               />
             </div>
           </div>
         </div>
 
-        <div className="container-fluid">
+        {/* <div className="container mt-5 border border-white" id="Testimonials"> */}
+        <div
+          className={` container mt-5 border border-white  rounded-4 slide-in-left   ${
+            hasViewedSlide.sixthElement ? "animate-enquire" : ""
+          }`}
+          ref={myRef6}
+          id="Testimonials"
+        >
+          <div className="row border-primary ">
+            <div className="col-12 text-center mb-4">
+              <h2 className="fw-bold">Testimonials</h2>
+            </div>
+          </div>
+
+          <Slider {...settings} className="m-0 p-0 col-12 ">
+            <div>
+              <div className=" p-3 shadow-sm border border-2 border-light rounded-3 ">
+                <h3 className="text-start">Kasekende Peter</h3>
+                <p className=" mt-3 ">
+                  "I am Peter Kasekende from Uganda. I completed my cabin crew
+                  course from WingsWay Training Institute and I thank all my
+                  teachers who have been there for me. Thank you so much and my
+                  coodinator, Mrs. Sheetal and also she was my trainer and I
+                  also thank Ms. Tina for every thing you did to us. And I
+                  encourage any one there who want to take course please come
+                  and join WingsWay institute and you can find it to all social
+                  media platform. THANK YOU WINGSWAY."
+                </p>
+              </div>
+            </div>
+            <div>
+              <div className=" p-3 shadow-sm border border-light rounded-3 ms-md-2 ms-lg-2 ">
+                <h4 className="text-start">Sidonie la Fleur</h4>
+                <p>
+                  "I had the best Educational experience from here and I can
+                  boost that I now Have WINGS to fly higher 🥰🥰🥰 I love y’all
+                  Mam Sheetal , Miss Tina and all the School Admins."
+                </p>
+              </div>
+            </div>
+            <div>
+              <div className="p-3 shadow-sm border border-light rounded-3">
+                <h4 className="text-start">Sushmita Bajracharya</h4>
+                <p>
+                  It was an amazing experience, m grateful to be your student.I
+                  want to thank entire team of wingsways Training Institute for
+                  the wonderful opportunities to learn and grow.Special thanks
+                  to ma'am sheetal and ma'am Tina. Thank you
+                </p>
+              </div>
+            </div>
+            <div>
+              <div className="p-3 shadow-sm border border-light rounded-3 ms-md-2 ms-lg-2">
+                <h4 className="text-start">Dilan Jason</h4>
+                <p>
+                  Wingsway has given me a opportunity into something I love
+                  which I'm extremely grateful. Mrs Tina's classes are very easy
+                  to understand and really enjoyable, I highly recommend
+                  wingsway to anyone who's looking for an upscale in their
+                  professional life
+                </p>
+              </div>
+            </div>
+            <div>
+              <div className="p-3 shadow-sm border border-light rounded-3">
+                <h4 className="text-start">Amika Wongsuwas</h4>
+                <p>
+                  I did my cabin crew course with wingsway institute and it was
+                  overall a great experience. My internship went really well as
+                  well with the support of my instructor and the allocators
+                  there I had the opportunity to go to fujarah aviation academy
+                  as well where we had a tour of the academy and learnt the
+                  steps on how we can become a pilot etc. it was a great
+                  experience with the trainers and my friends.
+                </p>
+                <p>
+                  Thank you wings way academy for supporting me and giving me🪽🪽
+                </p>
+              </div>
+            </div>
+            <div>
+              <div className="p-3 shadow-sm border border-light rounded-3 ms-md-2 ms-lg-2">
+                <h4 className="text-start ">Prashnaa Magar</h4>
+                <p>
+                  I had an amazing experience at wingsway training institute.
+                  The instructors were highly knowledgeable and passionate about
+                  their subjects, making learning both engaging and rewarding.
+                  Ms.Tina was so sweet and supportive.The curriculum at wingsway
+                  training institute is well-designed and comprehensive,
+                  covering all the necessary topics and providing practical
+                  skills.Overall, my time at wingsway training institute
+                  exceeded my expectations, and I would highly recommend it to
+                  anyone looking for a best Cabin Crew Courses, PGSA courses and
+                  a supportive learning environment.
+                </p>
+              </div>
+            </div>
+          </Slider>
+        </div>
+
+        {/* <div
+          className="container-fluid mt-5 border border-danger"
+          style={{ backgroundColor: "#002994", color: "white" }}
+        >
+          <div className="row d-flex align-items-start ">
+            <div className="col-12">
+            <div className="col-12 col-md-2 col-lg-2 d-flex flex-column align-items-center border border-dark ms-lg-5">
+              <img src={Footerlogo} alt="logo" className="img-fluid mt-3" />
+            </div>
+          </div>
+
+             <div className="col-12 col-md-3 col-lg-1 mt-3 border border-dark text-center">
+             <span> About The <br /> Course </span>
+             </div>  
+             <div className="col-12 col-md-3 col-lg-1 mt-3 border border-dark text-center">
+             <span>Key  <br /> Topics </span>
+             </div>    
+             <div className="col-12 col-md-3 col-lg-1 mt-3 border border-dark text-center">
+             <span>Course  <br /> Content </span>
+             </div>  
+             <div className="col-12 col-md-3 col-lg-1 mt-3 border border-dark text-center">
+             <span>Learner's  <br /> Profile </span>
+             </div> 
+             <div className="col-12 col-md-3 col-lg-1 mt-3 border border-dark text-center">
+             <span>Entry <br /> Qualification </span>
+             </div>  
+             <div className="col-12 col-md-3 col-lg-1 mt-3 border border-dark text-center">
+             <span>Career <br /> Opportunities </span>
+             </div>    
+             <div className="col-12 col-md-3 col-lg-1 mt-3 border border-dark text-center">
+             <span>Testimonial </span>
+             </div>    
+          </div>
+          
+        </div> */}
+
+        <div className="container-fluid ">
           <div className="row">
             <div className="col-12">
               <p className="text-end">
@@ -937,6 +1210,156 @@ export default function Home() {
                   <FontAwesomeIcon icon={faWhatsapp} bounce size="2x" />
                 </a>
               </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          className="container-fluid m-0 p-0"
+          style={{ backgroundColor: "#002994", color: "white" }}
+        >
+          {/* <div className="text-center">
+          <div
+            className="row d-flex  mt-5 border border-danger"
+            style={{ backgroundColor: "#002994", color: "white" }}
+          >
+            <div className="col-12 col-md-12 col-lg-2 d-flex flex-column align-items-center  ms-lg-5 ">
+              <img src={Footerlogo} alt="logo" className="img-fluid mt-3 " />
+            </div>
+
+            <div className="col-12 col-md-12 col-lg-1 mt-3  text-start mt-lg-5">
+              <a href="#about" className="footer-link">
+                <span>
+                  About The <br /> Course
+                </span>
+              </a>
+            </div>
+
+            <div className="col-12 col-md-12 col-lg-1 mt-3  text-start mt-lg-5">
+              <a href="#key" className="footer-link">
+                <span>
+                  Key <br /> Topics{" "}
+                </span>
+              </a>
+            </div>
+
+            <div className="col-12 col-md-12 col-lg-1 mt-3  text-start mt-lg-5">
+              <a href="#course" className="footer-link">
+                <span>
+                  Course <br /> Content{" "}
+                </span>
+              </a>
+            </div>
+
+            <div className="col-12 col-md-12 col-lg-1 mt-3  text-start mt-lg-5">
+              <a href="#learner" className="footer-link">
+                <span>
+                  Learner's <br /> Profile{" "}
+                </span>
+              </a>
+            </div>
+
+            <div className="col-12 col-md-12 col-lg-1 mt-3  text-start mt-lg-5">
+              <a href="#entry" className="footer-link">
+                <span>
+                  Entry <br /> Qualification{" "}
+                </span>
+              </a>
+            </div>
+
+            <div className="col-12 col-md-12 col-lg-1 mt-3  text-start mt-lg-5">
+              <a href="#career" className="footer-link">
+                <span>
+                  Career <br /> Opportunities 
+                </span>
+              </a>
+            </div>
+
+            <div className="col-12 col-md-12  col-lg-1 mt-3  text-start mt-lg-5">
+              <a href="#Testimonials" className="footer-link">
+                <span>Testimonial </span>
+              </a>
+            </div>
+          </div>
+          </div> */}
+          <div
+            className="text-center"
+            style={{ backgroundColor: "#002994", color: "white" }}
+          >
+            <div
+              className="row d-flex justify-content-center align-items-center mt-5"
+              style={{ backgroundColor: "#002994", color: "white" }}
+            >
+              <div className="col-12 col-md-12 col-lg-2 d-flex flex-column align-items-center ms-lg-5">
+                <img
+                  src={Footerlogo}
+                  alt="logo"
+                  className="img-fluid mt-3 responsive-logofooter"
+                />
+              </div>
+
+              <div className="col-12 col-md-12 col-lg-1 text-center  mt-lg-4 text-lg-justify">
+                <a href="#about" className="footer-link">
+                  <span>
+                    About The <br /> Course
+                  </span>
+                </a>
+              </div>
+
+              <div className="col-12 col-md-12 col-lg-1 mt-3 mt-md-3 text-center mt-lg-4 text-lg-justify" >
+                <a href="#key" className="footer-link">
+                  <span>
+                    Key <br /> Topics
+                  </span>
+                </a>
+              </div>
+
+              <div className="col-12 col-md-12 col-lg-1 mt-3 mt-md-3 text-center mt-lg-4 text-lg-justify">
+                <a href="#course" className="footer-link">
+                  <span>
+                    Course <br /> Content
+                  </span>
+                </a>
+              </div>
+
+              <div className="col-12 col-md-12 col-lg-1 mt-3 mt-md-3 text-center mt-lg-4 text-lg-justify">
+                <a href="#learner" className="footer-link">
+                  <span>
+                    Learner's <br /> Profile
+                  </span>
+                </a>
+              </div>
+
+              <div className="col-12 col-md-12 col-lg-1 mt-3 mt-md-3 text-center mt-lg-4 text-lg-justify">
+                <a href="#entry" className="footer-link">
+                  <span>
+                    Entry <br /> Qualification
+                  </span>
+                </a>
+              </div>
+
+              <div className="col-12 col-md-12 col-lg-1 mt-3 mt-md-3 text-center mt-lg-4 text-lg-justify">
+                <a href="#career" className="footer-link">
+                  <span>
+                    Career <br /> Opportunities
+                  </span>
+                </a>
+              </div>
+
+              <div className="col-12 col-md-12 col-lg-1 mt-3 mt-md-3 text-center mt-lg-1 text-lg-justify">
+                <a href="#Testimonials" className="footer-link">
+                  <span>Testimonial</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className="row pb-lg-3 "
+            style={{ backgroundColor: "#002994", color: "white" }}
+          >
+            <div className="col-12  text-center pb-lg-2 mt-3 mb-3 mt-md-3">
+              <p>© 2023 WingsWay All rights reserved</p>
             </div>
           </div>
         </div>
