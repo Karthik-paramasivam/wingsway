@@ -25,7 +25,7 @@ import icon3 from "./Images/icon3.png";
 import Crew2 from "./Images/crew2.jpg";
 import Crew3 from "./Images/crew3.jpg";
 import Crew4 from "./Images/crew4.jpg";
-import Crew5 from "./Images/crew5.jpeg";
+import Crew5 from "./Images/crew523.jpeg";
 
 export default function Home() {
   const [form] = Form.useForm(); // useForm hook for handling form operations
