@@ -349,16 +349,16 @@ export default function Home() {
                     Become a <br />
                     Professional Airline Cabin Crew Member!
                   </h1>
-                  <h2 className="text-white fw-light">
-                    Join our comprehensive course to launch your aviation
-                    career.
-                  </h2>
+                  <h4 className="text-white fw-light">
+                    Join our internationally accredited course and launch your
+                    aviation career with the best!
+                  </h4>
                 </motion.div>
 
                 {/* Second Column with Animation */}
                 <motion.div
                   className="col-12 col-lg-4 rounded-4 mt-3 m-auto mt-lg-1"
-                  style={{ backgroundColor: "#0721a4", padding:"20px"}}
+                  style={{ backgroundColor: "#0721a4", padding: "20px" }}
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 2 }}
@@ -510,23 +510,25 @@ export default function Home() {
 
                   {/* Course Description */}
                   <div className="course-text">
-                    <motion.p
+                    <motion.h1
                       initial={{ opacity: 0 }}
                       animate={{ opacity: hasViewed ? 1 : 0 }}
                       transition={{ delay: 0.5, duration: 1 }}
-                      className="course-title fs-3 fw-bold"
+                      className="course-title fw-bold"
                     >
                       <span>About the course</span>
-                    </motion.p>
+                    </motion.h1>
                     <motion.p
                       initial={{ opacity: 0 }}
                       animate={{ opacity: hasViewed ? 1 : 0 }}
                       transition={{ delay: 0.7, duration: 1 }}
                     >
                       The Airline Cabin Crew course at WingsWay Training
-                      Institute helps aspiring aviation professionals meet
-                      industry demands and offers a 360-degree learning
-                      experience. This includes:
+                      Institute is IATA-certified and one of the top courses to
+                      pursue in the region. This course helps aspiring aviation
+                      professionals meet global demands of the aviation industry
+                      and offers a 360-degree learning experience. This
+                      includes:
                     </motion.p>
                     <motion.ul
                       initial={{ opacity: 0 }}
@@ -599,7 +601,7 @@ export default function Home() {
                           icon={faCircleCheck}
                           className="text-primary me-2 flex-shrink-0 mt-1"
                         />
-                        Guaranteed internship after course completion.
+                        Guaranteed internship after course completion. *{" "}
                       </motion.li>
                     </motion.ul>
                   </div>
@@ -625,12 +627,12 @@ export default function Home() {
           >
             {" "}
             <div className="col-12 ">
-              <p className="text-center ">
-                <span className="fs-3 fw-bold">Key </span>
-                <span className="text-primary fs-3 fw-bold">Topics</span>
-              </p>
+              <h1 className="text-center ">
+                <span className=" fw-bold">Key </span>
+                <span className="text-primary  fw-bold">Topics</span>
+              </h1>
             </div>
-            <div className="col-12 d-flex justify-content-between flex-wrap ">
+            <div className="col-12 d-flex justify-content-between flex-wrap mt-3">
               <div className="col-12 col-lg-3 card border border-light shadow-lg hover-scale2 mt-2 mt-lg-0 p-sm-1">
                 <img
                   src={icon1}
@@ -639,7 +641,8 @@ export default function Home() {
                 />
                 <div>
                   <p className="fw-bold text-center mt-2">
-                    Coordination and communication <br />among crew members.
+                    Coordination and communication <br />
+                    among crew members.
                   </p>
                 </div>
               </div>
@@ -672,8 +675,9 @@ export default function Home() {
         </div>
 
         <div className="container mt-5" id="course">
+
           <div
-            className={`row shadow rounded-4 slide-in-left  ${
+            className={`row shadow rounded-4 slide-in-left p-4  ${
               hasViewedSlide.secondElement ? "animate-enquire" : ""
             }`}
             ref={myRef2}
@@ -689,10 +693,10 @@ export default function Home() {
 
             {/* Second Column - Course Content */}
             <div className="col-12 col-lg-6  mt-3 mt-lg-0">
-              <p className="text-center">
-                <span className="fw-bold fs-3 ">Course </span>
-                <span className="fw-bold fs-3 text-primary">Content</span>
-              </p>
+              <h1 className="text-center">
+                <span className="fw-bold  ">Course </span>
+                <span className="fw-bold text-primary">Content</span>
+              </h1>
               <ul style={{ listStyleType: "none", paddingLeft: 0 }}>
                 <li>
                   {" "}
@@ -740,7 +744,7 @@ export default function Home() {
                     icon={faCircleCheck}
                     className="text-primary me-2"
                   />
-                  Dangerous goods
+                  Dangerous Goods Regulations{" "}
                 </li>
                 <li className="mt-1">
                   {" "}
@@ -776,15 +780,15 @@ export default function Home() {
                 </li>
               </ul>
               <div className="text-center">
-                <Button
-                  className="mt-2 text-center text-white Contactbutton mb-2 mb-lg-0"
+                <button
+                  className="mt-2 text-center text-white Contactbutton mb-2 mb-lg-0 btn btn-lg"
                   style={{ background: "#0d278e" }}
                   onClick={() => {
                     window.location.href = "#"; // Simulate href="#" behavior
                   }}
                 >
                   Enquire Now
-                </Button>
+                </button>
               </div>
             </div>
           </div>
@@ -793,16 +797,16 @@ export default function Home() {
         <div className="container mt-5" id="learner">
           {/* <div className="row "> */}
           <div
-            className={`row shadow rounded-4 slide-in-left  ${
+            className={`row shadow rounded-4 slide-in-left p-4 ${
               hasViewedSlide.thirdElement ? "animate-slide-in" : ""
             }`}
             ref={myRef3}
           >
             <div className="col-12 col-lg-6 mt-3 mt-lg-0">
-              <p className="text-center">
-                <span className="fw-bold fs-3 ">Learner’s </span>
-                <span className="fw-bold fs-3 text-primary">Profile</span>
-              </p>
+              <h1 className="text-center">
+                <span className="fw-bold ">Learner’s </span>
+                <span className="fw-bold  text-primary">Profile</span>
+              </h1>
               <ul style={{ listStyleType: "none", paddingLeft: 0 }}>
                 <li>
                   {" "}
@@ -879,15 +883,15 @@ export default function Home() {
                 </li>
               </ul>
               <div className="text-center">
-                <Button
-                  className="mt-2 mb-2 text-center text-white Contactbutton"
+                <button
+                  className="mt-2 mb-2 text-center text-white Contactbutton btn btn-lg"
                   style={{ background: "#0d278e" }}
                   onClick={() => {
                     window.location.href = "#"; // Simulate href="#" behavior
                   }}
                 >
                   Enquire Now
-                </Button>
+                </button>
               </div>
             </div>
             <div className="col-12 col-lg-6 hover-scale2 mt-3 mb-3">
@@ -902,7 +906,7 @@ export default function Home() {
 
         <div className="container mt-5" id="entry">
           <div
-            className={`row row shadow rounded-4 slide-in-left  ${
+            className={`row row shadow rounded-4 slide-in-left p-4  ${
               hasViewedSlide.fourthElement ? "animate-enquire" : ""
             }`}
             ref={myRef4}
@@ -918,15 +922,15 @@ export default function Home() {
 
             {/* Second Column - Course Content */}
             <div className="col-12 col-lg-6 mt-2">
-              <p className="text-center">
-                <span className="fw-bold fs-3 ">Entry </span>
-                <span className="fw-bold fs-3 text-primary">
+              <h1 className="text-center">
+                <span className="fw-bold ">Entry </span>
+                <span className="fw-bold text-primary">
                   Qualifications
                 </span>
-              </p>
+              </h1>
               <ul style={{ listStyleType: "none", paddingLeft: 0 }}>
-              <li className="d-flex align-items-start mt-1">
-              {" "}
+                <li className="d-flex align-items-start mt-1">
+                  {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
                     className="text-primary me-2 flex-shrink-0 mt-1"
@@ -976,15 +980,15 @@ export default function Home() {
                 </li>
               </ul>
               <div className="text-center">
-                <Button
-                  className="mt-2 text-center text-white Contactbutton mb-2"
+                <button
+                  className="mt-2 text-center text-white Contactbutton mb-2 btn btn-lg"
                   style={{ background: "#0d278e" }}
                   onClick={() => {
                     window.location.href = "#"; // Simulate href="#" behavior
                   }}
                 >
                   Enquire Now
-                </Button>
+                </button>
               </div>
             </div>
           </div>
@@ -993,71 +997,71 @@ export default function Home() {
         <div className="container mt-5 " id="career">
           {/* <div className="row "> */}
           <div
-            className={`row shadow rounded-4 slide-in-left   ${
+            className={`row shadow rounded-4 slide-in-left p-4  ${
               hasViewedSlide.fifthElement ? "animate-slide-in" : ""
             }`}
             ref={myRef5}
           >
             <div className="col-12 col-lg-6 rounded-3 mt-lg-5">
-              <p className="text-center mt-lg-3">
-                <span className="fw-bold fs-3 ">Career </span>
-                <span className="fw-bold fs-3 text-primary">Opportunities</span>
-              </p>
+              <h1 className="text-center mt-lg-3">
+                <span className="fw-bold  ">Career </span>
+                <span className="fw-bold  text-primary">Opportunities</span>
+              </h1>
               <ul
                 style={{ listStyleType: "none", paddingLeft: 0 }}
-                className="ms-lg-5"
+                
               >
-                <li className="ms-lg-5">
+                <li >
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
-                    className="text-primary me-2 ms-lg-5"
+                    className="text-primary me-2"
                   />
                   Cabin Crew Supervisor
                 </li>
-                <li className="ms-lg-5 mt-1">
+                <li className=" mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
-                    className="text-primary me-2 ms-lg-5"
+                    className="text-primary me-2 "
                   />
                   Senior Air Cabin Crew{" "}
                 </li>
-                <li className="ms-lg-5 mt-1">
+                <li className=" mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
-                    className="text-primary me-2 ms-lg-5"
+                    className="text-primary me-2 "
                   />
                   Airline Passenger Service Staff{" "}
                 </li>
-                <li className="ms-lg-5 mt-1">
+                <li className=" mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
-                    className="text-primary me-2 ms-lg-5"
+                    className="text-primary me-2"
                   />
                   Ground Staff{" "}
                 </li>
-                <li className="ms-lg-5 d-flex align-items-start mt-1">
+                <li className=" d-flex align-items-start mt-1">
                   {" "}
                   <FontAwesomeIcon
                     icon={faCircleCheck}
-                    className="text-primary me-2 ms-lg-5  flex-shrink-0 mt-1"
+                    className="text-primary me-2  flex-shrink-0 mt-1"
                   />
                   Other roles in the Hospitality sector{" "}
                 </li>
               </ul>
               <div className="text-center">
-                <Button
-                  className="mt-2 mb-2 text-center text-white Contactbutton"
+                <button
+                  className="mt-2 mb-2 text-center text-white Contactbutton btn btn-lg"
                   style={{ background: "#0d278e" }}
                   onClick={() => {
                     window.location.href = "#"; // Simulate href="#" behavior
                   }}
                 >
                   Enquire Now
-                </Button>
+                </button>
               </div>
             </div>
             <div className="col-12 col-lg-6 hover-scale2 mt-3 mb-3 text-center">
@@ -1081,7 +1085,7 @@ export default function Home() {
         >
           <div className="row border-primary ">
             <div className="col-12 text-center mb-4">
-              <h2 className="fw-bold">Testimonials</h2>
+              <h1 className="fw-bold">Testimonials</h1>
             </div>
           </div>
 
@@ -1090,14 +1094,14 @@ export default function Home() {
               <div className=" p-3 shadow-sm border border-2 border-light rounded-3 ">
                 <h3 className="text-start">Kasekende Peter</h3>
                 <p className=" mt-3 ">
-                  "I am Peter Kasekende from Uganda. I completed my cabin crew
-                  course from WingsWay Training Institute and I thank all my
+                  I am Peter Kasekende from Uganda. I completed my cabin crew
+                  course from WingsWay Training Institute, and I thank all my
                   teachers who have been there for me. Thank you so much and my
-                  coodinator, Mrs. Sheetal and also she was my trainer and I
-                  also thank Ms. Tina for every thing you did to us. And I
-                  encourage any one there who want to take course please come
-                  and join WingsWay institute and you can find it to all social
-                  media platform. THANK YOU WINGSWAY."
+                  coordinator, Mrs. Sheetal and also she was my trainer, and I
+                  also thank Ms. Tina for everything you did to us. And I
+                  encourage anyone there who want to take course please come and
+                  join WingsWay institute and you can find it to all social
+                  media platform. THANK YOU WINGSWAY.
                 </p>
               </div>
             </div>
@@ -1105,9 +1109,9 @@ export default function Home() {
               <div className=" p-3 shadow-sm border border-light rounded-3 ms-md-2 ms-lg-2 ">
                 <h4 className="text-start">Sidonie la Fleur</h4>
                 <p>
-                  "I had the best Educational experience from here and I can
-                  boost that I now Have WINGS to fly higher 🥰🥰🥰 I love y’all
-                  Mam Sheetal , Miss Tina and all the School Admins."
+                  I had the best educational experience from here and I can
+                  boast that I now Have WINGS to fly higher. I love y’all Ma’am
+                  Sheetal, Miss Tina and all the School Admins.
                 </p>
               </div>
             </div>
@@ -1115,25 +1119,14 @@ export default function Home() {
               <div className="p-3 shadow-sm border border-light rounded-3">
                 <h4 className="text-start">Sushmita Bajracharya</h4>
                 <p>
-                  It was an amazing experience, m grateful to be your student.I
-                  want to thank entire team of wingsways Training Institute for
-                  the wonderful opportunities to learn and grow.Special thanks
-                  to ma'am sheetal and ma'am Tina. Thank you
+                  It was an amazing experience. I’m grateful to be your student.
+                  I want to thank entire team of WingsWay Training Institute for
+                  the wonderful opportunities to learn and grow. Special thanks
+                  to ma'am Sheetal and ma'am Tina. Thank you.
                 </p>
               </div>
             </div>
-            <div>
-              <div className="p-3 shadow-sm border border-light rounded-3 ms-md-2 ms-lg-2">
-                <h4 className="text-start">Dilan Jason</h4>
-                <p>
-                  Wingsway has given me a opportunity into something I love
-                  which I'm extremely grateful. Mrs Tina's classes are very easy
-                  to understand and really enjoyable, I highly recommend
-                  wingsway to anyone who's looking for an upscale in their
-                  professional life
-                </p>
-              </div>
-            </div>
+
             <div>
               <div className="p-3 shadow-sm border border-light rounded-3">
                 <h4 className="text-start">Amika Wongsuwas</h4>
@@ -1141,30 +1134,40 @@ export default function Home() {
                   I did my cabin crew course with wingsway institute and it was
                   overall a great experience. My internship went really well as
                   well with the support of my instructor and the allocators
-                  there I had the opportunity to go to fujarah aviation academy
+                  there I had the opportunity to go to Fujarah aviation academy
                   as well where we had a tour of the academy and learnt the
                   steps on how we can become a pilot etc. it was a great
                   experience with the trainers and my friends.
                 </p>
                 <p>
-                  Thank you wings way academy for supporting me and giving me🪽🪽
+                  Thank you WingsWay academy for supporting me and giving me🪽🪽
                 </p>
               </div>
             </div>
             <div>
               <div className="p-3 shadow-sm border border-light rounded-3 ms-md-2 ms-lg-2">
-                <h4 className="text-start ">Prashnaa Magar</h4>
+                <h4 className="text-start ">Jenine Bautista</h4>
                 <p>
-                  I had an amazing experience at wingsway training institute.
-                  The instructors were highly knowledgeable and passionate about
-                  their subjects, making learning both engaging and rewarding.
-                  Ms.Tina was so sweet and supportive.The curriculum at wingsway
-                  training institute is well-designed and comprehensive,
-                  covering all the necessary topics and providing practical
-                  skills.Overall, my time at wingsway training institute
-                  exceeded my expectations, and I would highly recommend it to
-                  anyone looking for a best Cabin Crew Courses, PGSA courses and
-                  a supportive learning environment.
+                  I recently completed the cabin crew course at WingsWay
+                  Training Institute, and I couldn't be more thrilled with my
+                  experience! From the moment I started, the training was
+                  engaging, hands-on, and incredibly well-structured. The
+                  instructors were not only highly knowledgeable but also deeply
+                  passionate about sharing real-world insights, which made every
+                  lesson feel valuable and relevant. I’m excited to embark on
+                  the journey toward my lifelong dream!✈️⭐💖 Special thanks to
+                  our trainer, Miss Tina.💐❤️{" "}
+                </p>
+              </div>
+            </div>
+            <div>
+              <div className="p-3 shadow-sm border border-light rounded-3 ms-md-2 ms-lg-2">
+                <h4 className="text-start ">Fayiz Ea</h4>
+                <p>
+                  First of all, really enjoying the course and getting so
+                  informative by doing the course about aviation and cabin crew,
+                  improving myself. And also, important to add that the service
+                  and the people there are very loving and supportive.
                 </p>
               </div>
             </div>
